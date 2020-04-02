@@ -5,6 +5,7 @@ import './App.css';
 import axios from 'axios';
 
 import Home from './routes/home/Home';
+import Room from './routes/room/Room';
 import NavigationBar from './ui/NavigationBar';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
@@ -32,6 +33,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/room/:id">
+              <Room />
             </Route>
           </Switch>
         </Container>
