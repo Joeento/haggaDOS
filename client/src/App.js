@@ -4,6 +4,7 @@ import './App.css';
 
 import axios from 'axios';
 
+import AddRoom from './ui/AddRoom';
 import RoomList from './ui/RoomList';
 import NavigationBar from './ui/NavigationBar';
 import Container from 'react-bootstrap/Container';
@@ -33,6 +34,7 @@ class App extends Component {
           <Card className="mt-4">
             <Card.Header>Rooms</Card.Header>
             <Card.Body>
+              <AddRoom />
               <RoomList rooms={this.state.rooms} />
             </Card.Body>
           </Card>
