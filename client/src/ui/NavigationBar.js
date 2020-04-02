@@ -13,7 +13,7 @@ class NavigationBar extends Component {
 
   render() {
     return (
-      <Navbar bg="black" expand="lg" variant="dark" >
+      <Navbar bg="black" expand="lg" variant="dark" className="mb-4" >
         <Navbar.Brand href="#">
           <FaTorah className='mr-2' size="1.6em" />HaggaDOS
         </Navbar.Brand>

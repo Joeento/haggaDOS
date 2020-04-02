@@ -40,7 +40,7 @@ class Home extends Component {
 
   render() {
     return (
-      <Card className="mt-4">
+      <Card>
         <Card.Header>Rooms</Card.Header>
         <Card.Body>
           <AddRoom createRoom={this.createRoom}/>
