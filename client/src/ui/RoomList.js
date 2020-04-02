@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Nav from 'react-bootstrap/Nav';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { LinkContainer } from 'react-router-bootstrap';
 //import './RoomList.css';
 
 class RoomList extends Component {
@@ -14,7 +15,11 @@ class RoomList extends Component {
       <ListGroup>
         {this.props.rooms.map(function(room) {
           return (
-            <ListGroup.Item key={room._id} action href="#">{room.name}</ListGroup.Item>
+            <LinkContainer key={room._id} to={'/room/' + room._id}>
+              <ListGroup.Item action>
+                {room.name}
+              </ListGroup.Item>
+            </LinkContainer>
           );
         })}
       </ListGroup>
