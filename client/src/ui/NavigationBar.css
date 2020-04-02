@@ -1,0 +1,6 @@
+.navbar {
+  background: #5f3fb5;
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: #FFFFFF !important
+}
