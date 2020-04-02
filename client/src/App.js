@@ -16,6 +16,8 @@ class App extends Component {
     this.state = {
       rooms: []
     }
+
+    this.createRoom = this.createRoom.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +25,19 @@ class App extends Component {
       .then(res => {
         const rooms = res.data.data;
         this.setState({ rooms });
-      })
+      });
+  }
+
+  createRoom(room_name) {
+    const self = this;
+    axios.post('/api/rooms', {name: room_name})
+      .then(res => {
+        const new_room = res.data.data;
+
+        let rooms = self.state.rooms;
+        rooms.push(new_room);
+        self.setState({ rooms });
+      });
   }
 
   render() {
@@ -34,7 +48,7 @@ class App extends Component {
           <Card className="mt-4">
             <Card.Header>Rooms</Card.Header>
             <Card.Body>
-              <AddRoom />
+              <AddRoom createRoom={this.createRoom}/>
               <RoomList rooms={this.state.rooms} />
             </Card.Body>
           </Card>
