@@ -7,10 +7,6 @@ import { FaTorah } from 'react-icons/fa';
 import './NavigationBar.css';
 
 class NavigationBar extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <Navbar bg="black" expand="lg" variant="dark" className="mb-4" >

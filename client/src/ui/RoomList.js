@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
-import Nav from 'react-bootstrap/Nav';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { LinkContainer } from 'react-router-bootstrap';
 //import './RoomList.css';
 
 class RoomList extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <ListGroup>

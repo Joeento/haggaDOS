@@ -4,8 +4,6 @@ import axios from 'axios';
 
 import AddRoom from '../..//ui/AddRoom';
 import RoomList from '../../ui/RoomList';
-import NavigationBar from '../../ui/NavigationBar';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
 class Home extends Component {
