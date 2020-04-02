@@ -14,7 +14,7 @@ class RoomList extends Component {
       <ListGroup>
         {this.props.rooms.map(function(room) {
           return (
-            <ListGroup.Item action href="#link1">{room.name}</ListGroup.Item>
+            <ListGroup.Item key={room._id} action href="#">{room.name}</ListGroup.Item>
           );
         })}
       </ListGroup>
