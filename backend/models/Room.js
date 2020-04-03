@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 // Create Schema
 const roomSchema = new Schema({
     name: String,
-    page: String,
+    page: Number,
     date: {
         type: Date,
         default: Date.now
