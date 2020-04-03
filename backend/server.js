@@ -37,7 +37,7 @@ router.get('/room/:id', function(req, res) {
 router.post('/rooms', function(req, res) {
 	const room = new Room({
 		name: req.body.name,
-		state: 0
+		page: 0
 	});
 
 	room.save(function(err) {
