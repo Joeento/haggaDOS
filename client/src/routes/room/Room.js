@@ -15,26 +15,34 @@ class Room extends Component {
       id: this.props.match.params.id,
       room: null
     }
+
+    this.updatePage = this.updatePage.bind(this);
   }
   componentDidMount() {
     this.loadData();
   }
 
   loadData() {
-
     axios.get('/api/room/' + this.state.id)
       .then(res => {
         const room = res.data.data;
         this.setState({ room });
       });
+  }
 
+  updatePage(page_num) {
+    axios.post('/api/room/' + this.state.id + '/page/' + page_num)
+      .then(res => {
+        const room = res.data.data;
+        this.setState({ room });
+      });
   }
 
   render() {
     return (
       <div>
         <h3>Room: {this.state.room != null ? this.state.room.name : 'N/A'}</h3>
-        <Viewer />
+        <Viewer room={this.state.room} updatePage={this.updatePage} />
       </div>
     );
   }
