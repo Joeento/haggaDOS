@@ -4,17 +4,16 @@ const path = require('path');
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
-const config = require('../config');
 
 const Room = require('./models/Room');
 
-const API_PORT = config.api_port;
+const API_PORT = process.env.API_PORT;
 
 const app = express();
 const router = express.Router();
 
 
-mongoose.connect(config.mongo_url, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -61,7 +60,7 @@ router.post('/room/:id/page/:page', function(req, res) {
 // append /api for our http requests
 app.use('/api', router);
 
-if (config.enviornment === 'production') {
+if (process.env.ENVIORNMENT === 'production') {
 	app.use(express.static(path.resolve(__dirname, '../client/build')));
 	app.get('*', function (req, res) {
 		res.sendFile(path.resolve(__dirname, '../client/build/index.html'));
