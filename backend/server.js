@@ -45,6 +45,17 @@ router.post('/rooms', function(req, res) {
 	});
 });
 
+router.post('/room/:id/page/:page', function(req, res) {
+	Room.findById(req.params.id, function(err, room) {
+		if (err) return res.json({ success: false, error: err });
+		room.page = req.params.page;
+		room.save(function(err) {
+			if (err) return res.json({ success: false, error: err });
+			return res.json({ success: true, data: room });
+		});
+	});
+});
+
 
 // append /api for our http requests
 app.use('/api', router);
