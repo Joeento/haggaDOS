@@ -27,6 +27,13 @@ router.get('/rooms', function(req, res) {
 	});
 });
 
+router.get('/room/:id', function(req, res) {
+	Room.findById(req.params.id, function(err, room) {
+		if (err) return res.json({ success: false, error: err });
+		return res.json({ success: true, data: room });
+	});
+});
+
 router.post('/rooms', function(req, res) {
 	const room = new Room({
 		name: req.body.name,
