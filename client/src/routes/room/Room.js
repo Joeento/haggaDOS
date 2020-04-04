@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 
 class Room extends Component {
+
+  refresh_interval = 0;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +23,12 @@ class Room extends Component {
   }
   componentDidMount() {
     this.loadData();
+    this.refresh_interval  = setInterval(this.loadData.bind(this), 2000);
   }
+
+  componentWillUnmount() {
+    clearInterval(this.refresh_interval);
+   }
 
   loadData() {
     axios.get('/api/room/' + this.state.id)
