@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const Room = require('./models/Room');
 
-const API_PORT = process.env.API_PORT;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 const router = express.Router();
@@ -69,4 +69,4 @@ if (process.env.ENVIORNMENT === 'production') {
 
 
 // launch our backend into a port
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
