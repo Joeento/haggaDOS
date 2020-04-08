@@ -19,7 +19,7 @@ class NavigationBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" >
           <Nav className="ml-auto" activeKey={false}>
-            <Nav.Link>About</Nav.Link>
+            <Nav.Link onClick={ () => {alert("This doesn't do anything.");} }>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
