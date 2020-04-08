@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
 import Viewer from '../../ui/Viewer';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { FaTrash, FaSyncAlt } from 'react-icons/fa';
 
 import './Room.css';
 
