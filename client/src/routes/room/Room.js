@@ -53,7 +53,10 @@ class Room extends Component {
     axios.post('/api/room/' + this.state.id + '/page/' + page_num)
       .then(res => {
         const room = res.data.data;
-        this.setState({ room });
+        this.setState({
+          room: room,
+          page: room.page
+        });
       });
   }
 
