@@ -79,7 +79,7 @@ class Room extends Component {
             </div>
             <div className='float-right'>
               <Form inline onSubmit={this.handleSubmit}>
-                <Form.Control className='page-number' value={this.state.page} onChange={this.handleChange} placeholder={this.state.room != null ? this.state.room.page : 0} /> &nbsp; / 128 &nbsp; <Button type="submit">Go</Button>
+                <Form.Control className='page-number' value={this.state.page} onChange={this.handleChange}  /> &nbsp; / 128 &nbsp; <Button type="submit">Go</Button>
               </Form>
             </div>
           </Col>
